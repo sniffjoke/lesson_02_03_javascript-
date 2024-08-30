@@ -82,3 +82,52 @@ import fetch from 'node-fetch'
 // })
 
 // race
+
+// const pr1 = fetch('https://yahoo.com')
+// const pr2 = fetch('https://bing.com')
+// const pr3 = fetch('https://google.com')
+//
+// const bigData = Promise.race([pr1, pr2, pr3])
+//
+// bigData
+//     .then((data) => {
+//         console.log(data.url)
+//     })
+//     .catch((err) => {
+//         console.log('Error: ', err.type)
+//     })
+
+// any
+
+// const pr1 = fetch('https://yahoo.com')
+// const pr2 = fetch('https://bingsdjak.com')
+// const pr3 = fetch('https://googlejfdksa.com')
+//
+// const bigData = Promise.any([pr1, pr2, pr3])
+//
+// bigData
+//     .then((data) => {
+//         console.log(data.url)
+//     })
+//     .catch((err) => {
+//         console.log('Error: ', err.type)
+//     })
+
+// allSettled
+
+const pr1 = fetch('https://yahoo.com')
+const pr2 = fetch('https://bing8.com')
+const pr3 = fetch('https://google.com')
+
+const bigData = Promise.allSettled([pr1, pr2, pr3])
+
+bigData
+    .then((data) => {
+        return data.map(item => {
+            if (item.reason) {
+                console.log('some error: ', item.reason.message)
+            } else {
+                console.log(item.value.url)
+            }
+        })
+    })
