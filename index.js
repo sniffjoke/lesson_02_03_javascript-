@@ -62,3 +62,23 @@ import fetch from 'node-fetch'
 // }).catch((err) => {
 //     console.log('reject foo')
 // })
+
+// --------------------------- all, race, any, allSettled - статические методы класса
+
+// then catch - экземплярные методы класса
+
+// all
+
+// const pr1 = fetch('https://yahoo.com')
+// const pr2 = fetch('https://bingfjdks.com')
+// const pr3 = fetch('https://google.com')
+//
+// const bigData =  Promise.all([pr1, pr2, pr3])
+//
+// bigData.then((data) => {
+//     console.log(data)
+// }).catch((err) => {
+//     console.log('Error: ', err.type)
+// })
+
+// race
